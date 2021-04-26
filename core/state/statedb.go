@@ -235,7 +235,7 @@ func (self *StateDB) GetValidBalance(addr common.Address) *big.Int {
 }
 
 func (self *StateDB) GetUnlockedBalance(addr common.Address) *big.Int {
-	return new(big.Int).Sub(self.GetBalance(addr), self.GetPOSLocked(addr))
+	return new(big.Int).Sub(self.GetPOSLocked(addr), self.GetBalance(addr))
 }
 
 func (self *StateDB) GetNonce(addr common.Address) uint64 {
